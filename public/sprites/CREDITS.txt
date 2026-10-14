@@ -1,0 +1,10 @@
+﻿Sprites de sobreviventes: "Mana Seed Character Base (FREE Demo 2.0)" por Seliel the Shaper.
+https://seliel-the-shaper.itch.io/character-base
+Licença do demo: uso comercial e não comercial permitido (ver "this is only a demo.txt" do pacote).
+As folhas survivor-1..4.png são composições (corpo + roupa + cabelo) das camadas originais do demo.
+Faróis, árvores, portão e o sprite antigo do Pálido são arte original em código (public/pixel.js).
+O Pálido atual compartilha a base Mana Seed. Corpo, capuz, manto e máscara formam a mesma folha composta em public/sprites/layers/palido-body.svg; o cutelo acompanha a mão em palido-cleaver.svg. Ferimentos (wounds-1..3.svg), grilhões e área de captura são desenhos vetoriais originais. O gerador reproduzível está em scripts/build-scene-sprites.mjs e preserva os PNGs licenciados. Os desenhos anteriores de referência estão em public/palido-parts.svg e palido-mask.svg. As ilustrações alternativas em public/art foram criadas com ImageGen; briefings em public/art/README.md.
+
+Cenários (public/scenery/): packs de floresta 'parallax forest' e 'Tall Forest' (cópias das licenças em license-*.pdf). Confirme os termos de crédito/uso antes de publicar.
+As fábricas abandonadas são desenhadas em código (public/scenery.js).
+Casinha, colchonete, almofada, cobertor, baú e raízes de busca são desenhos vetoriais originais em public/search-props.svg. A pá de escavação é uma camada vetorial original sincronizada aos quadros Mana Seed, gerada por scripts/build-scene-sprites.mjs em public/sprites/layers/search-spade.svg.

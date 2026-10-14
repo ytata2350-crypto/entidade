@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 610">
+<defs>
+<radialGradient id="terrain"><stop stop-color="#3b2b30"/><stop offset="1" stop-color="#1f171a"/></radialGradient>
+<linearGradient id="fog" x2="0" y2="1"><stop stop-color="#c2b2a8" stop-opacity=".02"/><stop offset=".6" stop-color="#c2b2a8" stop-opacity=".13"/><stop offset="1" stop-color="#c2b2a8" stop-opacity="0"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="15"/></filter>
+<pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0v80" fill="none" stroke="#9e9089" stroke-width=".5" opacity=".12"/></pattern>
+<g id="tree"><path d="m0-23-12 17h5l-10 14h14v8h6V8h14L7-6h5Z" fill="#20181b" stroke="#766c66" stroke-width=".7"/></g>
+<g id="pine"><path d="m0-27-9 13h4l-11 17h6l-7 9h14v8h6v-8h14L10 3h6L5-14h4Z" fill="#291e22" stroke="#90847d" stroke-width=".6"/></g>
+</defs>
+<rect width="1000" height="610" fill="url(#terrain)"/>
+<rect width="1000" height="610" fill="url(#grid)"/>
+<g fill="none" stroke="#ab9c94" opacity=".13" stroke-width="1.2">
+<path d="M-40 220C90 75 200 110 270 90S445 13 560 59 713 35 820 73s135-10 221 64M-50 244C80 104 195 134 270 111S442 37 557 82 710 59 822 94s142-4 230 66M-50 268C71 136 190 155 279 137S443 62 557 108 711 86 822 122s134-2 230 61M-40 302C71 161 190 176 283 164S446 91 553 137 722 113 820 150s125 3 230 60"/>
+<path d="M-30 390c110-79 260-102 330-48s117 25 174 10 132 94 269 44 190 34 280 3M-30 420c114-83 258-103 328-55s118 25 176 13 144 94 270 44 186 35 280 5M-30 450c107-80 259-101 327-51s118 24 177 11 144 97 270 43 178 42 278 8M-30 480c111-81 259-100 327-52s118 25 178 13 144 95 269 43 178 45 278 8M-30 510c107-82 259-97 327-51s118 23 178 13 144 95 269 42 178 47 278 9"/>
+</g>
+<path d="M-30 180C132 178 140 327 315 303s94-76 220-67 111 68 217 10S839 51 1030 51" fill="none" stroke="#5b424b" stroke-width="25" opacity=".27"/>
+<path d="M-30 180C132 178 140 327 315 303s94-76 220-67 111 68 217 10S839 51 1030 51" fill="none" stroke="#bbaba2" stroke-width="1.2" opacity=".32"/>
+<g opacity=".75"><use href="#tree" x="70" y="375"/><use href="#pine" x="95" y="419"/><use href="#pine" x="120" y="359"/><use href="#tree" x="145" y="394"/><use href="#pine" x="163" y="455"/><use href="#pine" x="96" y="489"/><use href="#tree" x="206" y="489"/><use href="#tree" x="247" y="465"/><use href="#pine" x="225" y="346"/><use href="#pine" x="291" y="345"/><use href="#tree" x="44" y="438"/><use href="#tree" x="278" y="503"/><use href="#pine" x="155" y="521"/></g>
+<g opacity=".7"><use href="#pine" x="310" y="132"/><use href="#tree" x="331" y="170"/><use href="#pine" x="374" y="126"/><use href="#tree" x="406" y="173"/><use href="#pine" x="432" y="103"/><use href="#pine" x="512" y="180"/><use href="#tree" x="565" y="130"/><use href="#pine" x="714" y="143"/><use href="#tree" x="735" y="187"/></g>
+<g stroke="#998c85" fill="#2b2024" stroke-width="1" opacity=".85"><path d="m460 400 31-67 42 34 29-59 52 92Z"/><path d="m471 400 20-43 22 16 20-6 15 33"/><path d="m533 367 29-59 15 68 37 24"/><path d="m558 400 7-21 18 1 9 20" fill="#1c1417"/><path d="m470 465 50-22 55 13 28-9 43 23-62 9Z" opacity=".4"/></g>
+<g stroke="#998c85" fill="#2a1e22" stroke-width="1.1"><path d="m347 309 0-46 35-17 43 16v46l-39 18Z"/><path d="m347 263 35 16 43-17m-43 17v47m-35-63 32-27 46 26"/><path d="m360 313v-29l11 5v29m20-17v-14l19-8v14m-35-37 7-7 11 4"/><path d="m329 325 56 24 64-29" opacity=".4"/></g>
+<g stroke="#ab9c94" fill="#2c2024" stroke-width="1"><path d="m643 215 10-75h19l9 75Z"/><path d="M650 140h26v-17h-26Zm-3-17 16-15 15 15M650 161h26m-26 13h27m-13-34v73"/><path d="m635 220 32 13 31-15" opacity=".6"/><path d="m650 132-76-13m99 13 71-18" opacity=".22"/></g>
+<g fill="none" stroke="#92857e" opacity=".75"><path d="m770 370 30-43 41 24 29-43 38 57-37 34Z"/><path d="m800 327 3 44 38-20 30 48-1-91m-67 63-33-1m100-62 16 56 22 1"/><path d="m806 302 12-38 16 38-14 13Z" stroke="#bfa97a"/><path d="m866 380 8-23 10 23-10 9Z" stroke="#bfa97a"/></g>
+<g fill="none" stroke="#b0a199" opacity=".65"><ellipse cx="826" cy="111" rx="53" ry="18"/><ellipse cx="826" cy="111" rx="36" ry="10"/><path d="M804 106V60l8-6v50m30 2V60l-8-6v49m-22-49 11-8 11 8"/><path d="m792 150 66 2m-54 15h46" opacity=".3"/></g>
+<path d="M190 427c79-10 102-107 191-128s42 116 149 119 53-170 122-198 91 153 170 104 23-132 8-214" fill="none" stroke="#baad80" stroke-width="1.7" stroke-dasharray="5 7" opacity=".6"/>
+<g filter="url(#blur)"><path d="M-60 510c149-136 205 20 368-39s321-70 448-6 244-41 315-94v120H-60Z" fill="url(#fog)"/><ellipse cx="660" cy="268" rx="310" ry="23" fill="#cbb9b0" opacity=".12"/></g>
+<g fill="#9a8d86" font-family="Georgia,serif" font-size="11" letter-spacing="5" opacity=".4"><text x="76" y="557">TERRES OUBLIÉES</text><text x="587" y="556">TERRA INCOGNITA</text></g>
+<g stroke="#b3a39b" fill="none" opacity=".55" transform="translate(91 90)"><circle r="26"/><path d="M0-39v78m-39-39h78m-13-25L25 25m0-50L-25 25m25-49 6 18-6-5-6 5Z"/><text y="-44" text-anchor="middle" fill="#bcaca3" stroke="none" font-family="Georgia" font-size="13">N</text></g>
+<rect x="16" y="16" width="968" height="578" rx="3" fill="none" stroke="#9b8e87" stroke-opacity=".18"/><path d="M16 49V16h33m902 0h33v33M16 561v33h33m902 0h33v-33" fill="none" stroke="#afaf89" stroke-opacity=".4"/>
+</svg>

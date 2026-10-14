@@ -1,0 +1,165 @@
+/* @file Palco vivo: os atores caminham em coordenadas estáveis sobre o mesmo chão. */
+.dynamic-stage { height: 330px; --actor-scale: 3; --hunter-height: 146px; }
+.dynamic-stage .scene-layer { animation-play-state: paused; }
+.dynamic-stage .scene-ground { height: 44px; }
+.world-actors,.world-beacons,.world-effects { position: absolute; inset: 0; pointer-events: none; }
+.world-beacons { z-index: 1; }
+.world-actors { z-index: 3; }
+.world-effects { z-index: 6; overflow: hidden; }
+.world-avatar { position: absolute; left: 0; bottom: 31px; width: 0; height: 0; will-change: transform; z-index: 3; }
+.world-shadow { position: absolute; width: calc(19px * var(--actor-scale)); height: 7px; left: 0; bottom: -4px; transform: translateX(-50%); background: #08070bb0; border-radius: 50%; }
+.actor-facing { position: absolute; left: calc(-32px * var(--actor-scale)); top: calc(-48px * var(--actor-scale)); width: calc(64px * var(--actor-scale)); height: calc(64px * var(--actor-scale)); transform: scaleX(var(--facing,1)); transform-origin: center; }
+.dynamic-stage .world-avatar .person { --s: var(--actor-scale); position: relative; left: auto; bottom: auto; transform: none; margin: 0; filter: none; }
+.dynamic-stage .world-avatar .person::before,.dynamic-stage .world-avatar .person::after { display: none; }
+.actor-name { position: absolute; bottom: calc(30px * var(--actor-scale) + 4px); left: 0; transform: translateX(-50%); white-space: nowrap; font: 13px/1.3 'VT323',monospace; color: var(--text); padding: 2px 6px; background: var(--panel-glass); border-bottom: 1px solid var(--line-strong); text-shadow: 1px 1px var(--background); }
+.is-me .actor-name { color: var(--gold); border-color: var(--gold); }
+.actor-bubble { position: absolute; left: 0; bottom: calc(30px * var(--actor-scale) + 31px); transform: translateX(-50%); color: var(--gold-ink); background: var(--text); padding: 5px 9px; font: 12px/1.3 var(--sans); white-space: nowrap; box-shadow: 0 3px var(--background); max-width: 210px; }
+.actor-bubble::after { content: ''; position: absolute; bottom: -5px; left: calc(50% - 3px); border: 4px solid transparent; border-top-color: var(--text); border-bottom: 0; }
+.actor-chains { display: none; position: absolute; left: -15px; bottom: 12px; font: 31px/1 sans-serif; color: #b9b1bd; text-shadow: 2px 2px var(--background); }
+.is-caught[data-captive="seated"] .actor-chains { display: block; }
+.is-caught .actor-facing { filter: saturate(.5) brightness(.8); }
+.is-caught .actor-name { color: var(--accent-text); border-color: var(--accent); }
+.is-hurt .actor-facing { filter: saturate(.85) brightness(.94); }
+.world-avatar[data-action="hide"] .actor-facing { opacity: .38; filter: brightness(.7); }
+.world-avatar[data-action="hide"] .actor-name { color: #bbcea1; opacity: .75; }
+.world-avatar[data-action="repair"] .actor-facing { animation: repair-work .25s steps(2) infinite; }
+.world-avatar[data-action="heal"] .actor-facing,.world-avatar[data-action="rescue"] .actor-facing { filter: drop-shadow(0 0 6px #9bc99266); }
+.world-avatar.is-dead .actor-facing { top: calc(-32px * var(--actor-scale)); transform: rotate(90deg); filter: grayscale(.85); opacity: .65; }
+.world-avatar.is-dead .actor-name { bottom: 23px; opacity: .65; }
+.world-avatar.is-dead .world-shadow { width: calc(29px * var(--actor-scale)); }
+.world-avatar.is-dead { z-index: 1; }
+.world-avatar.is-dodging .actor-facing { animation: dodge-hop .65s ease-out; }
+.world-avatar.is-struck .actor-facing { animation: struck .5s steps(2); }
+.world-hunter .actor-name { color: var(--accent-text); border-color: var(--accent); }
+.world-hunter .world-shadow { background: #09060cc9; }
+.world-beacon { position: absolute; bottom: 32px; width: 0; height: 0; }
+.beacon-art { position: absolute; bottom: 0; left: -28px; width: 56px; height: 56px; }
+.dynamic-stage .beacon-art .px { position: static; width: 56px; height: 56px; transform: none; }
+.beacon-name { position: absolute; top: 7px; left: 0; transform: translateX(-50%); white-space: nowrap; font: 11px 'VT323',monospace; color: var(--text); text-shadow: 1px 1px var(--background); }
+.beacon-meter { position: absolute; width: 38px; height: 3px; background: #18121d; bottom: -23px; left: -19px; }
+.beacon-meter i { display: block; height: 100%; background: var(--accent-text); transition: width .6s; }
+.is-lit .beacon-art { filter: drop-shadow(0 0 14px var(--gold-glow)); animation: beacon-shine 1.6s ease-in-out infinite alternate; }
+.is-lit .beacon-meter i { background: var(--gold); }
+.world-gate { position: absolute; left: 94%; bottom: 28px; z-index: 2; width: 74px; height: 104px; transform: translateX(-50%); filter: drop-shadow(0 0 18px var(--gold-glow)); animation: beacon-shine 1.5s ease-in-out infinite alternate; }
+.dynamic-stage .world-gate .px { position: static; width: 100%; height: 100%; transform: none; }
+.dynamic-stage.gate-is-open { border-bottom-color: var(--gold); }
+.world-float { position: absolute; bottom: 105px; transform: translateX(-50%); font: 18px/1.2 'VT323',monospace; white-space: nowrap; color: var(--gold); text-shadow: 2px 2px var(--background); animation: float-reward 2.6s ease-out both; }
+.world-float.announcement { bottom: auto; top: 54px; background: var(--panel-glass); border-block: 1px solid var(--gold); padding: 8px 14px; font-size: 19px; }
+.world-float.green { color: #b6e7a4; }
+.world-float.red { color: var(--accent-text); }
+.world-burst { position: absolute; bottom: 58px; width: 0; height: 0; --particle: var(--gold); }
+.world-burst.green { --particle: #9cdb94; }
+.world-burst.red { --particle: var(--accent-text); }
+.world-burst i { position: absolute; width: 4px; height: 4px; background: var(--particle); box-shadow: 0 0 6px var(--particle); transform: rotate(calc(var(--i) * 45deg)); animation: spark-burst .9s ease-out both; }
+.dynamic-stage.attack-impact::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 7; box-shadow: inset 0 0 65px #b52d3966; animation: impact-fade .45s ease-out both; }
+.scene-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 13px 0 0; font-size: 11px; color: var(--muted); }
+.scene-toolbar > span { display: flex; gap: 7px; align-items: center; }
+.scene-toolbar i { width: 5px; height: 5px; background: var(--gold); box-shadow: 0 0 6px var(--gold-glow); }
+.scene-toolbar button { flex-shrink: 0; border: 1px solid var(--line-strong); background: var(--panel-high); color: var(--gold); padding: 6px 9px; font: 12px var(--sans); }
+.scene-toolbar button:hover { background: var(--panel-high); }
+.stage[data-motion="off"] * { animation-play-state: paused !important; }
+@keyframes repair-work { 50% { translate: 1px 0; } }
+@keyframes dodge-hop { 40% { translate: 0 -19px; } 70% { translate: 0 -7px; } }
+@keyframes struck { 20%,60% { translate: -5px 0; filter: brightness(1.6) sepia(.4); } 40%,80% { translate: 4px 0; } }
+@keyframes hunter-strike { 40% { translate: calc(var(--facing) * -15px) -3px; rotate: calc(var(--facing) * -9deg); } }
+@keyframes beacon-shine { to { opacity: .8; filter: drop-shadow(0 0 22px var(--gold-glow)); } }
+@keyframes float-reward { 0% { opacity: 0; translate: 0 8px; } 12%,70% { opacity: 1; } 100% { opacity: 0; translate: 0 -30px; } }
+@keyframes spark-burst { 0% { opacity: 1; translate: 0 0; } 100% { opacity: 0; translate: calc((var(--i) - 3.5) * 8px) calc(-30px + var(--i) * 2px); } }
+@keyframes impact-fade { to { opacity: 0; } }
+@media(max-width:600px) {
+  .dynamic-stage { height: 280px; --actor-scale: 2; --hunter-height: 112px; }
+  .actor-name { font-size: 11px; padding: 2px 4px; }
+  .actor-bubble { font-size: 10px; max-width: 140px; padding: 4px 6px; }
+  .beacon-art,.dynamic-stage .beacon-art .px { width: 44px; height: 44px; }
+  .beacon-art { left: -22px; }
+  .beacon-name { font-size: 10px; }
+  .beacon-meter { width: 26px; left: -13px; }
+  .world-gate { width: 52px; height: 84px; }
+  .world-float.announcement { font-size: 16px; max-width: 95%; white-space: normal; text-align: center; }
+  .scene-toolbar { gap: 10px; font-size: 10px; }
+  .scene-toolbar > span { max-width: 165px; }
+  .scene-toolbar button { font-size: 11px; padding: 7px; }
+}
+/* A ativação explícita do usuário também funciona se o sistema prefere menos movimento. */
+@media(prefers-reduced-motion:reduce) {
+  .stage[data-motion="on"] .person-layer { animation: person-play var(--ms) steps(var(--frames)) infinite !important; }
+}
+.actor-name { max-width: 110px; overflow: hidden; text-overflow: ellipsis; }
+.action-countdown { font: 13px 'VT323',monospace; padding: 1px 5px; background: var(--background-glass); color: var(--gold); }
+.action-countdown:empty { display: none; }
+/* Todos os quadros Mana Seed têm a sola na linha 43/44, e não na borda 64 do arquivo. */
+.actor-facing { top: calc(-44px * var(--actor-scale)); }
+.world-shadow { bottom: -3px; width: calc(12px * var(--actor-scale)); height: 5px; background: #08080ac0; }
+.world-avatar.is-moving .world-shadow { animation: grounded-step .7s steps(3) infinite; }
+.world-avatar[data-motion="repair"].is-moving .world-shadow,.world-avatar[data-motion="escape"] .world-shadow { animation-duration: .43s; }
+.world-hunter { --actor-scale: 3.3; }
+.world-hunter .hunter-facing { position: absolute; left: calc(-32px * var(--actor-scale)); top: calc(-44px * var(--actor-scale)); bottom: auto; width: calc(64px * var(--actor-scale)); height: calc(64px * var(--actor-scale)); transform: scaleX(var(--facing,1)); }
+.world-hunter .actor-name { bottom: calc(30px * var(--actor-scale) + 7px); }
+.world-hunter .world-shadow { width: calc(13px * var(--actor-scale)); height: 6px; }
+.world-hunter.is-attacking .hunter-facing { animation: hunter-strike .43s ease-out; }
+.dynamic-stage .scene-layer { inset-inline: -40px; animation-play-state: running; transform: translateX(calc(var(--camera,0px) * var(--depth,.5) * -1)); }
+.dynamic-stage .scene-ground { left: -40px; right: -40px; transform: translateX(calc(var(--camera,0px) * -1)); }
+.world-actors,.world-beacons,.world-effects { transform: translateX(calc(var(--camera,0px) * -1)); }
+.world-gate { transform: translateX(calc(-50% - var(--camera,0px))); }
+@keyframes grounded-step { 50% { width: calc(11px * var(--actor-scale)); opacity: .85; } }
+@media(max-width:600px) { .world-hunter { --actor-scale: 2.2; } .world-shadow { height: 4px; } }
+@media(prefers-reduced-motion:reduce) {
+  .stage[data-motion="on"] .scene-layer { animation: forest-pan var(--t) linear infinite !important; }
+}
+.palido-person .person-layer { z-index: 1; }
+.world-blood { position: absolute; bottom: calc(77px - var(--lane,0px)); width: 0; height: 0; }
+.world-blood i { position: absolute; width: var(--drop-size); height: calc(var(--drop-size) + 1px); background: #bb3348; box-shadow: 1px 1px #602231; animation: blood-drop 1.1s ease-out both; }
+.world-blood i:nth-child(2n) { background: #e26062; }
+.world-blood-stain { position: absolute; bottom: calc(29px - var(--lane,0px)); width: 19px; height: 3px; transform: translateX(-50%); background: #8d283c; box-shadow: -5px 1px #7a2534,7px -1px #9a3041; animation: blood-stain 6s ease-out both; }
+@keyframes blood-drop { 0% { opacity: 1; translate: 0 0; } 35% { opacity: 1; translate: calc(var(--dx) * .4) calc(var(--rise) * -1); } 100% { opacity: 0; translate: var(--dx) 45px; } }
+@keyframes blood-stain { 0%,55% { opacity: .65; } 100% { opacity: 0; } }
+@media(max-width:600px) { .world-blood { bottom: calc(61px - var(--lane,0px)); } }
+/* Rosto e arma são camadas na mesma folha 8×8: cada quadro já contém os encaixes corretos. */
+.palido-person .palido-body-layer { z-index: 1; filter: none; }
+.palido-person .palido-cleaver-layer { z-index: 3; filter: none; }
+.palido-person[data-facing="back"] .palido-cleaver-layer { z-index: 0; }
+.world-hunter.is-attacking .palido-cleaver-layer { transform-origin: calc(var(--grip-x,36) * var(--actor-scale) * 1px) calc(var(--grip-y,32) * var(--actor-scale) * 1px); animation: cleaver-hand-strike .43s ease-out both !important; }
+@keyframes cleaver-hand-strike { 0% { rotate: 0deg; } 30% { rotate: -70deg; } 65% { rotate: 35deg; } 100% { rotate: 0deg; } }
+@media(prefers-reduced-motion:reduce) {
+  .stage[data-motion="on"] .world-hunter.is-attacking .palido-cleaver-layer { animation: cleaver-hand-strike .43s ease-out both !important; }
+  .stage[data-motion="on"] .world-hunter.is-attacking .hunter-facing { animation: hunter-strike .43s ease-out !important; }
+}
+/* Toda a figura usa o mesmo índice de quadro, inclusive os ferimentos e a arma. */
+.scene-clocked .person-layer { animation: none !important; background-position-x: calc((var(--col0) + var(--frame,0)) * -64px * var(--s)); }
+.wound-layer { opacity: 0; z-index: 5; }
+[data-wounds="1"] .wound-1,[data-wounds="2"] .wound-1,[data-wounds="3"] .wound-1,
+[data-wounds="2"] .wound-2,[data-wounds="3"] .wound-2,[data-wounds="3"] .wound-3 { opacity: 1; }
+.captivity-site { position: absolute; left: 3px; bottom: 16px; width: min(177px,26%); height: 156px; image-rendering: pixelated; z-index: 0; opacity: .8; }
+.captivity-platform {position:absolute;bottom:0;left:0;width:100%;height:84px;background:url('/captivity.svg') left bottom / 100% auto no-repeat;}
+.captivity-platform.back-platform {bottom:72px;}
+.captivity-site span { position: absolute; bottom: -8px; left: 10px; color: var(--muted); font: 10px 'VT323',monospace; letter-spacing: 1px; }
+.actor-chains { left: calc(-10px * var(--actor-scale)); bottom: calc(5px * var(--actor-scale)); width: calc(20px * var(--actor-scale)); height: calc(8px * var(--actor-scale)); background: url('/captive-chains.svg') center / contain no-repeat; image-rendering: pixelated; z-index: 5; }
+[data-captive="seated"] .actor-facing { animation: captive-breath 2.6s steps(2) infinite; }
+[data-captive="seated"] .actor-name { bottom: calc(21px * var(--actor-scale) + 6px); font-size: 11px; max-width:calc(15px * var(--actor-scale)); }
+[data-captive="seated"] .actor-bubble { bottom: calc(23px * var(--actor-scale) + 27px); }
+[data-captive="seated"] .actor-bubble {left:0;transform:none;}
+[data-captive="seated"] .actor-bubble::after {left:10px;}
+[data-captive="seated"] .world-shadow { width: calc(21px * var(--actor-scale)); height: 5px; }
+@keyframes captive-breath { 50% { translate: 0 1px; } }
+.is-downed .actor-facing {rotate:-88deg;transform-origin:50% 62.5%;top:calc(-40px*var(--actor-scale));}
+.is-downed .actor-name {bottom:calc(12px*var(--actor-scale));}
+.is-downed .world-shadow {width:calc(30px*var(--actor-scale));left:calc(-10px*var(--actor-scale));}
+.is-carried .world-shadow,.is-carried .actor-name,.is-carried .actor-bubble,.is-carried .actor-chains {display:none;}
+.is-carried .actor-facing {top:calc((-32px - 16px*var(--carry-drop,0))*var(--actor-scale));filter:saturate(.7) brightness(.92);}
+.is-carried .person {rotate:calc(72deg*(1 - var(--carry-drop,0)));transform-origin:50% 50%;}
+.world-hunter.is-lifting .hunter-facing {translate:0 5px;rotate:calc(var(--facing,1)*-8deg);transform-origin:50% 70%;}
+.world-hunter.is-carrying .palido-cleaver-layer,.world-hunter.is-lifting .palido-cleaver-layer {visibility:hidden;}
+.carrying-arm {display:none;position:absolute;left:calc(3px*var(--actor-scale));bottom:calc(18px*var(--actor-scale));width:calc(4px*var(--actor-scale));height:calc(9px*var(--actor-scale));background:#59454a;border:calc(1px*var(--actor-scale)) solid #231c28;box-shadow:inset 0 calc(3px*var(--actor-scale)) #b7a68c;z-index:60;transform-origin:50% 85%;rotate:20deg;}
+.world-hunter.is-carrying .carrying-arm {display:block;}
+.world-hunter:has(.palido-person[data-facing="left"]) .carrying-arm {left:calc(-7px*var(--actor-scale));rotate:-20deg;}
+.palido-blood-drip { display:none;position:absolute;left:calc(var(--grip-x,36)*var(--actor-scale)*1px);top:calc((var(--grip-y,32) - 5)*var(--actor-scale)*1px);width:3px;height:4px;background:#b83c53;box-shadow:5px -2px #8e2a40,-4px 2px #7b2639;z-index:6; }
+.fresh-blood .palido-blood-drip { display:block;animation:hunter-blood-drip 1.1s ease-in both; }
+.fresh-blood .palido-cleaver-layer { filter:drop-shadow(0 0 3px #c34b5b88); }
+@keyframes hunter-blood-drip { 0%{opacity:1;}100%{translate:3px 28px;opacity:0;} }
+@media(max-width:600px) {
+  .captivity-site { width: 26%; height: 112px; }
+  .captivity-platform {height:64px;}
+  .captivity-platform.back-platform {bottom:48px;}
+  .captivity-site span { font-size: 8px; left: 4px; }
+  [data-captive="seated"] .actor-name { font-size: 10px; }
+}

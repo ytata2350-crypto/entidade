@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 32 32" shape-rendering="crispEdges" role="img" aria-labelledby="title">
+  <title id="title">Entidade — gancho em pixel art</title>
+  <!-- Moldura em degraus: a mesma grade do gancho, sem curvas suavizadas. -->
+  <path fill="#b3121f" d="M7 1h18v1h3v2h2v3h1v18h-1v3h-2v2h-3v1H7v-1H4v-2H2v-3H1V7h1V4h2V2h3Z"/>
+  <path fill="#151012" d="M8 4h16v1h3v3h1v16h-1v3h-3v1H8v-1H5v-3H4V8h1V5h3Z"/>
+  <path fill="#c81a28" d="M7 2h18v1H7ZM3 7h1v18H3Z"/>
+  <!-- Haste e curva formam uma única silhueta para continuar legível na aba. -->
+  <path fill="#f0e7dc" d="M15 9h3v7h2v1h2v2h1v4h-1v2h-2v1h-6v-1h-2v-2h-1v-3h3v2h1v1h4v-1h1v-2h-1v-1h-3v-1h-1Z"/>
+  <path fill="#f05a5a" d="M15 5h3v1h1v3h-1v1h-3V9h-1V6h1Z"/>
+</svg>
