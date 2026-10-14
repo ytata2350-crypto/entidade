@@ -9,17 +9,18 @@ const assignments = {
   medkit: ['kit-curativo'], rope: ['corda'], map: ['mapa-rasgado'], flask: ['cantimplora'],
   gear: ['pecas'], 'bronze-key': ['chave-bronze'], clock: ['relogio-bolso', 'relogio-quebrado', 'relogio-parado'],
   battery: ['bateria'], coin: ['moeda-gasta'], feather: ['pena-corvo'], branch: ['flor-seca'],
-  candle: ['vela-sebo', 'vela-perfumada', 'vela-vigia'], fabric: ['pano-manchado', 'lencol-bordado', 'veu-palido'],
   ribbon: ['fita-seda'], 'ribbon-worn': ['fita-desbotada'], 'mirror-shard': ['caco-espelho'],
   lily: ['lirio-murcho'], tooth: ['dente-lobo'], earrings: ['brinco-latao'], letter: ['carta-amassada'],
   pendant: ['relicario-vazio', 'medalhao-sem-foto'], 'silver-ring': ['anel-prata'], mirror: ['espelho-mao'],
-  diary: ['diario-rasgado'], gloves: ['luva-renda'], orchid: ['orquidea-palida'],
+  necklace: ['colar-contas'], diary: ['diario-rasgado'], gloves: ['luva-renda'], orchid: ['orquidea-palida'],
   chalice: ['calice-trincado'], rose: ['rosa-nevoa'], 'gold-ring': ['anel-ouro-velho'], cape: ['estola-veludo'],
   crown: ['coroa-espinhos'], 'star-map': ['mapa-estrelas'], bell: ['sino-rachado', 'sino-vigia'],
   mask: ['mascara-marfim'], 'music-box': ['caixa-musica'], 'watcher-mirror': ['espelho-vigilia'],
   eye: ['olho-nevoa'], 'ancient-key': ['chave-primeira-porta', 'chave-limiar'],
   'beacon-shard': ['estilhaco-farol'], scanner: ['sonda-ecos'], magnifier: ['lupa-rastros'],
-  bag: ['bolsa-lona', 'backpack-0', 'backpack-1', 'backpack-2', 'backpack-3', 'backpack-4', 'backpack-5'],
+  'bag-canvas': ['bolsa-lona', 'backpack-0'], 'bag-leather': ['backpack-1'],
+  'bag-waterproof': ['backpack-2'], 'bag-campaign': ['backpack-3'],
+  'bag-tactical': ['backpack-4'], 'bag-mist': ['backpack-5'],
 };
 
 export const ITEM_ASSETS = Object.freeze(Object.fromEntries(Object.entries(assignments)

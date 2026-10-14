@@ -11,6 +11,12 @@
     "width": 16,
     "height": 16
   },
+  "rope.png": {
+    "pack": "items",
+    "file": "item689.png",
+    "width": 16,
+    "height": 16
+  },
   "map.png": {
     "pack": "items",
     "file": "item662.png",
@@ -19,7 +25,7 @@
   },
   "gear.png": {
     "pack": "items",
-    "file": "item933.png",
+    "file": "item934.png",
     "width": 16,
     "height": 16
   },
@@ -233,6 +239,42 @@
     "width": 16,
     "height": 16
   },
+  "bag-canvas.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa129.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-leather.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa133.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-waterproof.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa134.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-campaign.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa135.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-tactical.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa136.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-mist.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa137.png",
+    "width": 16,
+    "height": 16
+  },
   "flask.png": {
     "pack": "Free - Raven Fantasy Icons",
     "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa121.png",
@@ -251,34 +293,16 @@
     "width": 16,
     "height": 16
   },
+  "necklace.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa118.png",
+    "width": 16,
+    "height": 16
+  },
   "chalice.png": {
     "pack": "Free - Raven Fantasy Icons",
     "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa54.png",
     "width": 16,
     "height": 16
-  },
-  "bag.png": {
-    "pack": "Pixel Art Icon Pack - RPG",
-    "file": "Equipment/Bag.png",
-    "width": 32,
-    "height": 32
-  },
-  "rope.png": {
-    "pack": "Pixel Art Icon Pack - RPG",
-    "file": "Material/Rope.png",
-    "width": 32,
-    "height": 32
-  },
-  "candle.png": {
-    "pack": "Pixel Art Icon Pack - RPG",
-    "file": "Misc/Candle.png",
-    "width": 32,
-    "height": 32
-  },
-  "fabric.png": {
-    "pack": "Pixel Art Icon Pack - RPG",
-    "file": "Material/Fabric.png",
-    "width": 32,
-    "height": 32
   }
 }

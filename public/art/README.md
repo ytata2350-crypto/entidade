@@ -16,8 +16,8 @@ Os cenários e as camadas dos sobreviventes existentes foram preservados. Ícone
 
 ## Ícones de itens fornecidos pelo usuário
 
-`items/` guarda uma seleção de PNGs de 16 × 16 e 32 × 32 pixels, copiados sem alterações dos pacotes
-`items`, `Free - Raven Fantasy Icons` e `Pixel Art Icon Pack - RPG` da pasta fornecida pelo usuário.
+`items/` guarda uma seleção de PNGs de 16 × 16 pixels, copiados sem alterações dos pacotes
+`items` e `Free - Raven Fantasy Icons` da pasta fornecida pelo usuário.
 O pacote Raven é de Clockwork Raven Studios; sua nota original está em `items/RAVEN-NOTE.txt`.
 `items/sources.json` registra o pacote e o arquivo de origem de cada imagem.
 
