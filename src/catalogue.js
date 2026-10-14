@@ -277,5 +277,5 @@ export function getCatalogue() {
   return { rarities: RARITIES, equipment: EQUIPMENT, backpacks: BACKPACKS, lights: LIGHTS,
     talents: TALENTS, shopCategories: SHOP_CATEGORIES, regions: REGIONS, categories: CATEGORIES, hunters: HUNTERS,
     items: ITEMS.map(({ weight, ...entry }) => ({ ...entry, minEquipmentId: equipmentForItem(entry).id })),
-    commands: COMMANDS };
+    commands: COMMANDS, aliases: ALIASES };
 }
