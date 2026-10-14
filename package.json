@@ -1,0 +1,15 @@
+{
+  "name": "entidade-expedicoes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Jogo independente de exploração para comunidades da Twitch.",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "test": "node --test test/*.test.js",
+    "sprites:scene": "node scripts/build-scene-sprites.mjs"
+  }
+}

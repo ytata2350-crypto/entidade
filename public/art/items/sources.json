@@ -1,0 +1,308 @@
+{
+  "toolbox.png": {
+    "pack": "items",
+    "file": "item714.png",
+    "width": 16,
+    "height": 16
+  },
+  "medkit.png": {
+    "pack": "items",
+    "file": "item913.png",
+    "width": 16,
+    "height": 16
+  },
+  "rope.png": {
+    "pack": "items",
+    "file": "item689.png",
+    "width": 16,
+    "height": 16
+  },
+  "map.png": {
+    "pack": "items",
+    "file": "item662.png",
+    "width": 16,
+    "height": 16
+  },
+  "gear.png": {
+    "pack": "items",
+    "file": "item934.png",
+    "width": 16,
+    "height": 16
+  },
+  "clock.png": {
+    "pack": "items",
+    "file": "item941.png",
+    "width": 16,
+    "height": 16
+  },
+  "battery.png": {
+    "pack": "items",
+    "file": "item959.png",
+    "width": 16,
+    "height": 16
+  },
+  "coin.png": {
+    "pack": "items",
+    "file": "item1158.png",
+    "width": 16,
+    "height": 16
+  },
+  "feather.png": {
+    "pack": "items",
+    "file": "item1176.png",
+    "width": 16,
+    "height": 16
+  },
+  "branch.png": {
+    "pack": "items",
+    "file": "item988.png",
+    "width": 16,
+    "height": 16
+  },
+  "ribbon.png": {
+    "pack": "items",
+    "file": "item1203.png",
+    "width": 16,
+    "height": 16
+  },
+  "ribbon-worn.png": {
+    "pack": "items",
+    "file": "item1202.png",
+    "width": 16,
+    "height": 16
+  },
+  "mirror-shard.png": {
+    "pack": "items",
+    "file": "item1138.png",
+    "width": 16,
+    "height": 16
+  },
+  "lily.png": {
+    "pack": "items",
+    "file": "item1025.png",
+    "width": 16,
+    "height": 16
+  },
+  "tooth.png": {
+    "pack": "items",
+    "file": "item1185.png",
+    "width": 16,
+    "height": 16
+  },
+  "earrings.png": {
+    "pack": "items",
+    "file": "item1103.png",
+    "width": 16,
+    "height": 16
+  },
+  "letter.png": {
+    "pack": "items",
+    "file": "item642.png",
+    "width": 16,
+    "height": 16
+  },
+  "pendant.png": {
+    "pack": "items",
+    "file": "item862.png",
+    "width": 16,
+    "height": 16
+  },
+  "silver-ring.png": {
+    "pack": "items",
+    "file": "item1104.png",
+    "width": 16,
+    "height": 16
+  },
+  "mirror.png": {
+    "pack": "items",
+    "file": "item805.png",
+    "width": 16,
+    "height": 16
+  },
+  "diary.png": {
+    "pack": "items",
+    "file": "item648.png",
+    "width": 16,
+    "height": 16
+  },
+  "gloves.png": {
+    "pack": "items",
+    "file": "item749.png",
+    "width": 16,
+    "height": 16
+  },
+  "orchid.png": {
+    "pack": "items",
+    "file": "item1026.png",
+    "width": 16,
+    "height": 16
+  },
+  "rose.png": {
+    "pack": "items",
+    "file": "item1030.png",
+    "width": 16,
+    "height": 16
+  },
+  "gold-ring.png": {
+    "pack": "items",
+    "file": "item892.png",
+    "width": 16,
+    "height": 16
+  },
+  "cape.png": {
+    "pack": "items",
+    "file": "item876.png",
+    "width": 16,
+    "height": 16
+  },
+  "crown.png": {
+    "pack": "items",
+    "file": "item1098.png",
+    "width": 16,
+    "height": 16
+  },
+  "star-map.png": {
+    "pack": "items",
+    "file": "item663.png",
+    "width": 16,
+    "height": 16
+  },
+  "bell.png": {
+    "pack": "items",
+    "file": "item937.png",
+    "width": 16,
+    "height": 16
+  },
+  "mask.png": {
+    "pack": "items",
+    "file": "item302.png",
+    "width": 16,
+    "height": 16
+  },
+  "music-box.png": {
+    "pack": "items",
+    "file": "item979.png",
+    "width": 16,
+    "height": 16
+  },
+  "watcher-mirror.png": {
+    "pack": "items",
+    "file": "item1140.png",
+    "width": 16,
+    "height": 16
+  },
+  "eye.png": {
+    "pack": "items",
+    "file": "item1173.png",
+    "width": 16,
+    "height": 16
+  },
+  "beacon-shard.png": {
+    "pack": "items",
+    "file": "item1244.png",
+    "width": 16,
+    "height": 16
+  },
+  "scanner.png": {
+    "pack": "items",
+    "file": "item961.png",
+    "width": 16,
+    "height": 16
+  },
+  "magnifier.png": {
+    "pack": "items",
+    "file": "item770.png",
+    "width": 16,
+    "height": 16
+  },
+  "lamp-trail.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa86.png",
+    "width": 16,
+    "height": 16
+  },
+  "lamp-field.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa85.png",
+    "width": 16,
+    "height": 16
+  },
+  "lamp-prism.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa91.png",
+    "width": 16,
+    "height": 16
+  },
+  "lamp-aurora.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa92.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-canvas.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa129.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-leather.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa133.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-waterproof.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa134.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-campaign.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa135.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-tactical.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa136.png",
+    "width": 16,
+    "height": 16
+  },
+  "bag-mist.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa137.png",
+    "width": 16,
+    "height": 16
+  },
+  "flask.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa121.png",
+    "width": 16,
+    "height": 16
+  },
+  "bronze-key.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa77.png",
+    "width": 16,
+    "height": 16
+  },
+  "ancient-key.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa179.png",
+    "width": 16,
+    "height": 16
+  },
+  "necklace.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa118.png",
+    "width": 16,
+    "height": 16
+  },
+  "chalice.png": {
+    "pack": "Free - Raven Fantasy Icons",
+    "file": "Free - Raven Fantasy Icons/Separated Files/16x16/fa54.png",
+    "width": 16,
+    "height": 16
+  }
+}
